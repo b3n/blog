@@ -3,6 +3,7 @@
 # The MIT License (MIT)
 #
 # Copyright (c) 2018 Sunaina Pai
+# With modifications since June 2018 copyright (c) Ben
 #
 # Permission is hereby granted, free of charge, to any person obtaining
 # a copy of this software and associated documentation files (the
@@ -24,7 +25,7 @@
 # SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
 
-"""Make static website/blog with Python."""
+"""Static website/blog generator."""
 
 
 import os
@@ -62,52 +63,18 @@ def truncate(text, words=25):
     return ' '.join(re.sub('(?s)<.*?>', ' ', text).split()[:words])
 
 
-def read_headers(text):
-    """Parse headers in text and yield (key, value, end-index) tuples."""
-    for match in re.finditer('\s*<!--\s*(.+?)\s*:\s*(.+?)\s*-->\s*|.+', text):
-        if not match.group(1):
-            break
-        yield match.group(1), match.group(2), match.end()
-
-
 def read_content(filename):
     """Read content and metadata from file into a dictionary."""
-    # Read file content.
     text = fread(filename)
+    name = os.path.basename(filename).split('.')[0]
 
-    # Read metadata and save it in a dictionary.
-    date_slug = os.path.basename(filename).split('.')[0]
-    match = re.search('^(?:(\d\d\d\d-\d\d-\d\d)-)?(.+)$', date_slug)
-    content = {
-        'date': match.group(1) or '1970-01-01',
-        'slug': match.group(2),
-    }
-
-    # Read headers.
-    end = 0
-    for key, val, end in read_headers(text):
-        content[key] = val
-
-    # Separate content from headers.
-    text = text[end:]
-
-    # Convert Markdown content to HTML.
-    if filename.endswith(('.md', '.mkd', '.mkdn', '.mdown', '.markdown')):
-        try:
-            if _test == 'ImportError':
-                raise ImportError('Error forced by test')
-            import CommonMark
-            text = CommonMark.commonmark(text)
-        except ImportError as e:
-            log('WARNING: Cannot render Markdown in {}: {}', filename, str(e))
-
-    # Update the dictionary with content text and summary text.
-    content.update({
+    return {
         'content': text,
+        'date': '1970-01-01',
+        'slug': name,
         'summary': truncate(text),
-    })
-
-    return content
+        'title': name,
+    }
 
 
 def render(template, **params):
@@ -190,7 +157,7 @@ def main():
                page_layout, **params)
 
     # Create blogs.
-    blog_posts = make_pages('content/blog/*.md',
+    blog_posts = make_pages('content/blog/*.html',
                             '_site/blog/{{ slug }}/index.html',
                             post_layout, blog='blog', **params)
     news_posts = make_pages('content/news/*.html',
@@ -208,10 +175,6 @@ def main():
               feed_xml, item_xml, blog='blog', title='Blog', **params)
     make_list(news_posts, '_site/news/rss.xml',
               feed_xml, item_xml, blog='news', title='News', **params)
-
-
-# Test parameter to be set temporarily by unit tests.
-_test = None
 
 
 if __name__ == '__main__':
