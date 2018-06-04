@@ -28,9 +28,9 @@
 """Static website/blog generator."""
 
 
+from collections import defaultdict
 from datetime import datetime
 import glob
-import json
 import os
 import re
 import shutil
@@ -56,12 +56,14 @@ def read_content(path):
     """Read content and metadata from file into a dictionary."""
     text = fread(path)
     name = os.path.basename(path).split('.')[0]
+    category = os.path.dirname(path).split('/')[-1]
     date = datetime.fromtimestamp(os.path.getmtime(path))
 
     return {
+        'category': category,
         'content': text,
-        'full_date': date.strftime('%Y-%m-%d %H:%M:%S'),
         'date': date.strftime('%Y-%m-%d'),
+        'full_date': date.strftime('%Y-%m-%d %H:%M:%S'),
         'slug': name,
         'title': name.replace('-', ' ').title(),
     }
@@ -69,9 +71,11 @@ def read_content(path):
 
 def render(template, **params):
     """Replace placeholders in template with values from params."""
-    return re.sub(r'{{\s*([^}\s]+)\s*}}',
-                  lambda match: str(params.get(match.group(1), match.group(0))),
-                  template)
+    return re.sub(
+        r'{{\s*([^}\s]+)\s*}}',
+        lambda match: str(params.get(match.group(1), match.group(0))),
+        template,
+    )
 
 
 def make_pages(src, dst, layout, **params):
@@ -107,6 +111,14 @@ def make_list(posts, dst, list_layout, item_layout, **params):
     fwrite(dst_path, output)
 
 
+def by_category(posts):
+    posts_by_category = defaultdict(list)
+    for post in posts:
+        posts_by_category[post['category']].append(post)
+
+    return posts_by_category
+
+
 def main():
     # Create a new _site directory from scratch.
     if os.path.isdir('_site'):
@@ -121,10 +133,6 @@ def main():
         'current_year': datetime.now().year
     }
 
-    # If params.json exists, load it.
-    if os.path.isfile('params.json'):
-        params.update(json.loads(fread('params.json')))
-
     # Load layouts.
     page_layout = fread('layout/page.html')
     post_layout = fread('layout/post.html')
@@ -138,21 +146,35 @@ def main():
     list_layout = render(page_layout, content=list_layout)
 
     # Create site pages.
-    make_pages('content/[!_]*.html', '_site/{{ slug }}/index.html',
-               page_layout, **params)
+    make_pages(
+        'content/[!_]*.html',
+        '_site/{{ slug }}/index.html',
+        page_layout,
+        **params,
+    )
 
     # Create blogs.
-    blog_posts = make_pages('content/*.html',
-                            '_site/{{ slug }}/index.html',
-                            post_layout, **params)
+    blog_posts = make_pages(
+        'content/*/*.html',
+        '_site/{{ category }}/{{ slug }}/index.html',
+        post_layout,
+        **params,
+    )
 
     # Create blog list pages.
-    make_list(blog_posts, '_site/index.html',
-              list_layout, item_layout, **params)
+    make_list(blog_posts, '_site/index.html', list_layout, item_layout, **params)
+    for category, posts in by_category(blog_posts).items():
+        make_list(
+            posts,
+            '_site/{{ category }}/index.html',
+            list_layout,
+            item_layout,
+            category=category,
+            **params,
+        )
 
     # Create RSS feeds.
-    make_list(blog_posts, '_site/rss.xml',
-              feed_xml, item_xml, **params)
+    make_list(blog_posts, '_site/rss.xml', feed_xml, item_xml, **params)
 
 
 if __name__ == '__main__':

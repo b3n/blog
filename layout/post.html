@@ -1,6 +1,10 @@
 <article>
-    <h2><strong><a href="{{ base_path }}/{{ slug }}/">{{ title }}</a></strong></h2>
-    {{ content }}
-    <footer><p>Last updated on <time title="{{ full_date }}">{{ date }}</time>.</p></footer>
+  <h2>
+    <a href="{{ base_path }}/{{ category }}">{{ category }}</a>
+    /
+    <strong><a href="{{ base_path }}/{{ category }}/{{ slug }}">{{ title }}</a></strong>
+  </h2>
+  {{ content }}
+  <footer><p>Last updated on <time title="{{ full_date }}">{{ date }}</time>.</p></footer>
 </article>
 <hr />
