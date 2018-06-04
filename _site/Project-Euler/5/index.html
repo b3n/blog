@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="description" content="A software engineer's blog." />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0" />
+        <title>5</title>
+        <link href="/style.css" rel="stylesheet" type="text/css" media="screen" />
+        <link rel="icon" type="image/png" href="/favicon.gif" />
+        <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML"></script>
+    </head>
+    <body>
+        <div id="wrapper">
+            <header>
+                <h1>
+                    <a href="/" class="logo">Shobute</a>
+                    <span id="flair">&#9752;</span>
+                </h1>
+                <hr />
+            </header>
+            <article>
+  <h2>
+    <a href="/Project-Euler">Project-Euler</a>
+    /
+    <strong><a href="/Project-Euler/5">5</a></strong>
+  </h2>
+  <p><a href="http://projecteuler.net/problem=5">Problem 5</a> asks:</p>
+<blockquote><p>What is the smallest positive number that is evenly divisible by all of the numbers from 1 to 20?</p></blockquote>
+<p>I did another brute-force solution in Java, not the most elegant way to solve it, but it runs in a third of a second on my computer:</p>
+<pre>public class Problem5 {
+    public static void main(String[] args) {
+        int div = 3;
+        for (int result=20; div&lt;20; result+=20) {
+            for (div=3; result%div==0; div++) {
+                if (div == 19) System.out.println(result);
+            }
+        }
+    }
+}</pre>
+<p>One thing to note is the outer loop increments by 20 because you know 20 will have to be a factor, so it saves a lot of time checking unnecessary numbers (and division can start from 3 because if it&rsquo;s divisible by 20 it&rsquo;s divisible by 2).
+
+  <footer><p>Last updated on <time title="2018-02-08 19:39:56">2018-02-08</time>.</p></footer>
+</article>
+<hr />
+
+            <footer>
+                <p>All content is <a href="http://creativecommons.org/publicdomain/zero/1.0/">public domain</a> unless otherwise stated. <a href="/about-shobute" class="logo">Shobute</a> is powered by procrastination.</p>
+            </footer>
+        </div>
+    </body>
+</html>

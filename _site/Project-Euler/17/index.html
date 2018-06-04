@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="description" content="A software engineer's blog." />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0" />
+        <title>17</title>
+        <link href="/style.css" rel="stylesheet" type="text/css" media="screen" />
+        <link rel="icon" type="image/png" href="/favicon.gif" />
+        <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML"></script>
+    </head>
+    <body>
+        <div id="wrapper">
+            <header>
+                <h1>
+                    <a href="/" class="logo">Shobute</a>
+                    <span id="flair">&#9752;</span>
+                </h1>
+                <hr />
+            </header>
+            <article>
+  <h2>
+    <a href="/Project-Euler">Project-Euler</a>
+    /
+    <strong><a href="/Project-Euler/17">17</a></strong>
+  </h2>
+  <p><a href="https://projecteuler.net/problem=17">Problem 17</a> asks:</p>
+<blockquote><p>If all the numbers from 1 to 1 000 (one thousand) inclusive were written out in words, how many letters would be used?</p></blockquote>
+<p>This problem can be solved by hand. I essentially used Python as a calculator to solve it:</p>
+<pre>
+len("onethousand" + 900*"hundred" + 190*"onetwothreefourfivesixseveneightnine" +
+    100*"twentythirtyfortyfiftysixtyseventyeightyninety" + 891*"and" +
+    10*"teneleventwelvethirteenfourteenfifteensixteenseventeeneighteennineteen")
+</pre>
+
+  <footer><p>Last updated on <time title="2018-02-08 19:39:56">2018-02-08</time>.</p></footer>
+</article>
+<hr />
+
+            <footer>
+                <p>All content is <a href="http://creativecommons.org/publicdomain/zero/1.0/">public domain</a> unless otherwise stated. <a href="/about-shobute" class="logo">Shobute</a> is powered by procrastination.</p>
+            </footer>
+        </div>
+    </body>
+</html>

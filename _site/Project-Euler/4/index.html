@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="description" content="A software engineer's blog." />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0" />
+        <title>4</title>
+        <link href="/style.css" rel="stylesheet" type="text/css" media="screen" />
+        <link rel="icon" type="image/png" href="/favicon.gif" />
+        <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML"></script>
+    </head>
+    <body>
+        <div id="wrapper">
+            <header>
+                <h1>
+                    <a href="/" class="logo">Shobute</a>
+                    <span id="flair">&#9752;</span>
+                </h1>
+                <hr />
+            </header>
+            <article>
+  <h2>
+    <a href="/Project-Euler">Project-Euler</a>
+    /
+    <strong><a href="/Project-Euler/4">4</a></strong>
+  </h2>
+  <p><a href="http://projecteuler.net/problem=4">Problem 4</a> asks:</p>
+<blockquote><p>Find the largest palindrome made from the product of two 3-digit numbers.</p></blockquote>
+<p>I solved this with a simple brute force solution in Java:</p>
+<pre>public class Problem4 {
+    public static void main(String[] args) {
+        int product, rProduct, temp;
+        int result = 0;
+        for (int a = 100; a &lt; 1000; a++) {
+            // start from `a' to avoid duplicates
+            for (int b = a; b &lt; 1000; b++) {
+                product = a * b;
+                temp = product;
+                rProduct = 0;
+                while (temp &gt; 0) {
+                    rProduct = rProduct * 10 + temp % 10;
+                    temp = temp / 10;
+                }
+                if (product == rProduct &amp;&amp; product &gt; result) {
+                    result = product;
+                }
+            }
+        }
+        System.out.println(result);
+    }
+}</pre>
+<p>I would try to come up with a more efficient solution if the numbers were bigger, but as is it runs in under a tenth of a second.</p>
+
+  <footer><p>Last updated on <time title="2018-02-08 19:39:56">2018-02-08</time>.</p></footer>
+</article>
+<hr />
+
+            <footer>
+                <p>All content is <a href="http://creativecommons.org/publicdomain/zero/1.0/">public domain</a> unless otherwise stated. <a href="/about-shobute" class="logo">Shobute</a> is powered by procrastination.</p>
+            </footer>
+        </div>
+    </body>
+</html>
