@@ -2,8 +2,8 @@
 
 # The MIT License (MIT)
 #
-# Copyright (c) 2018 Sunaina Pai
-# With modifications since June 2018 copyright (c) Ben
+# Copyright (c) 2018 Sunaina Pai,
+# with modifications since June 2018 copyright (c) Ben Lloyd.
 #
 # Permission is hereby granted, free of charge, to any person obtaining
 # a copy of this software and associated documentation files (the
@@ -144,14 +144,6 @@ def main():
     # Combine layouts to form final layouts.
     post_layout = render(page_layout, content=post_layout)
     list_layout = render(page_layout, content=list_layout)
-
-    # Create site pages.
-    make_pages(
-        'content/[!_]*.html',
-        '_site/{{ slug }}/index.html',
-        page_layout,
-        **params,
-    )
 
     # Create blogs.
     blog_posts = make_pages(
