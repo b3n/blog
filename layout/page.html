@@ -1,42 +1,27 @@
 <!DOCTYPE html>
-<html>
-<head>
-    <title>{{ title }} - {{ subtitle }}</title>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width">
-    <link rel="stylesheet" type="text/css" href="{{ base_path }}/css/style.css">
-</head>
-
-<body id="{{ slug }}">
-
-<nav>
-<section>
-    <span class="home">
-        <a href="{{ base_path }}/">Home</a>
-    </span>
-    <span class="links">
-        <a href="{{ base_path }}/blog/">Blog</a>
-        <a href="{{ base_path }}/news/">News</a>
-        <a href="{{ base_path }}/contact/">Contact</a>
-        <a href="{{ base_path }}/about/">About</a>
-    </span>
-</section>
-</nav>
-
-<main>
-{{ content }}
-</main>
-
-<footer>
-<section>
-<p>&copy; {{ current_year }} Lorem Ipsum</p>
-<p>
-    <a href="https://twitter.com/sunainapai">Twitter</a>
-    <a href="https://github.com/sunainapai">GitHub</a>
-    <a href="https://www.example.com/">Example</a>
-</p>
-</section>
-</footer>
-
-</body>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="description" content="A software engineer's blog." />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0" />
+        <title>{{ title }}</title>
+        <link href="{{ base_path }}/style.css" rel="stylesheet" type="text/css" media="screen" />
+        <link rel="icon" type="image/png" href="{{ base_path }}/favicon.gif" />
+        <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML"></script>
+    </head>
+    <body>
+        <div id="wrapper">
+            <header>
+                <h1>
+                    <a href="/" class="logo">Shobute</a>
+                    <span id="flair">&#9752;</span>
+                </h1>
+                <hr />
+            </header>
+            {{ content }}
+            <footer>
+                <p>All content is <a href="http://creativecommons.org/publicdomain/zero/1.0/">public domain</a> unless otherwise stated. <a href="/about-shobute" class="logo">Shobute</a> is powered by procrastination.</p>
+            </footer>
+        </div>
+    </body>
 </html>

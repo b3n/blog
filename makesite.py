@@ -28,13 +28,12 @@
 """Static website/blog generator."""
 
 
-import os
-import shutil
-import re
+from datetime import datetime
 import glob
-import sys
 import json
-import datetime
+import os
+import re
+import shutil
 
 
 def fread(filename):
@@ -53,27 +52,18 @@ def fwrite(filename, text):
         f.write(text)
 
 
-def log(msg, *args):
-    """Log message with specified arguments."""
-    sys.stderr.write(msg.format(*args) + '\n')
-
-
-def truncate(text, words=25):
-    """Remove tags and truncate text to the specified number of words."""
-    return ' '.join(re.sub('(?s)<.*?>', ' ', text).split()[:words])
-
-
-def read_content(filename):
+def read_content(path):
     """Read content and metadata from file into a dictionary."""
-    text = fread(filename)
-    name = os.path.basename(filename).split('.')[0]
+    text = fread(path)
+    name = os.path.basename(path).split('.')[0]
+    date = datetime.fromtimestamp(os.path.getmtime(path))
 
     return {
         'content': text,
-        'date': '1970-01-01',
+        'full_date': date.strftime('%Y-%m-%d %H:%M:%S'),
+        'date': date.strftime('%Y-%m-%d'),
         'slug': name,
-        'summary': truncate(text),
-        'title': name,
+        'title': name.replace('-', ' ').title(),
     }
 
 
@@ -97,7 +87,6 @@ def make_pages(src, dst, layout, **params):
         dst_path = render(dst, **params)
         output = render(layout, **params)
 
-        log('Rendering {} => {} ...', src_path, dst_path)
         fwrite(dst_path, output)
 
     return sorted(items, key=lambda x: x['date'], reverse=True)
@@ -115,7 +104,6 @@ def make_list(posts, dst, list_layout, item_layout, **params):
     dst_path = render(dst, **params)
     output = render(list_layout, **params)
 
-    log('Rendering list => {} ...', dst_path)
     fwrite(dst_path, output)
 
 
@@ -128,10 +116,9 @@ def main():
     # Default parameters.
     params = {
         'base_path': '',
-        'subtitle': 'Lorem Ipsum',
-        'author': 'Admin',
+        'title': 'Shobute',
         'site_url': 'http://localhost:8000',
-        'current_year': datetime.datetime.now().year
+        'current_year': datetime.now().year
     }
 
     # If params.json exists, load it.
@@ -151,30 +138,21 @@ def main():
     list_layout = render(page_layout, content=list_layout)
 
     # Create site pages.
-    make_pages('content/_index.html', '_site/index.html',
-               page_layout, **params)
     make_pages('content/[!_]*.html', '_site/{{ slug }}/index.html',
                page_layout, **params)
 
     # Create blogs.
-    blog_posts = make_pages('content/blog/*.html',
-                            '_site/blog/{{ slug }}/index.html',
-                            post_layout, blog='blog', **params)
-    news_posts = make_pages('content/news/*.html',
-                            '_site/news/{{ slug }}/index.html',
-                            post_layout, blog='news', **params)
+    blog_posts = make_pages('content/*.html',
+                            '_site/{{ slug }}/index.html',
+                            post_layout, **params)
 
     # Create blog list pages.
-    make_list(blog_posts, '_site/blog/index.html',
-              list_layout, item_layout, blog='blog', title='Blog', **params)
-    make_list(news_posts, '_site/news/index.html',
-              list_layout, item_layout, blog='news', title='News', **params)
+    make_list(blog_posts, '_site/index.html',
+              list_layout, item_layout, **params)
 
     # Create RSS feeds.
-    make_list(blog_posts, '_site/blog/rss.xml',
-              feed_xml, item_xml, blog='blog', title='Blog', **params)
-    make_list(news_posts, '_site/news/rss.xml',
-              feed_xml, item_xml, blog='news', title='News', **params)
+    make_list(blog_posts, '_site/rss.xml',
+              feed_xml, item_xml, **params)
 
 
 if __name__ == '__main__':

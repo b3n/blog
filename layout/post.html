@@ -1,5 +1,6 @@
 <article>
-<h1><a href="{{ base_path }}/{{ blog }}/{{ slug }}/">{{ title }}</a></h1>
-<p class="meta">Published on {{ date }} by <b>{{ author }}</b></p>
-{{ content }}
+    <h2><strong><a href="{{ base_path }}/{{ slug }}/">{{ title }}</a></strong></h2>
+    {{ content }}
+    <footer><p>Last updated on <time title="{{ full_date }}">{{ date }}</time>.</p></footer>
 </article>
+<hr />
