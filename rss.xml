@@ -7,355 +7,254 @@
 <description>Grow with Technology</description>
 
 <item>
-<title>No Pass Go</title>
-<link>http://localhost:8000/no-pass-go/</link>
+<title>Impossible List</title>
+<link>http://localhost:8000/impossible-list/</link>
 <description>
 <![CDATA[
-<p>
-{{ summary }}&nbsp;<a href="http://localhost:8000/no-pass-go/">...</a>
-</p>
-<p><a href="http://localhost:8000/no-pass-go/">Read More</a></p>
+<p><a href="http://localhost:8000/impossible-list/">Read More</a></p>
 ]]>
 </description>
-<pubDate>2018-03-03</pubDate>
+<pubDate>2018-07-20</pubDate>
 </item>
 <item>
 <title>Copy And Paste In Xterm</title>
 <link>http://localhost:8000/copy-and-paste-in-xterm/</link>
 <description>
 <![CDATA[
-<p>
-{{ summary }}&nbsp;<a href="http://localhost:8000/copy-and-paste-in-xterm/">...</a>
-</p>
 <p><a href="http://localhost:8000/copy-and-paste-in-xterm/">Read More</a></p>
 ]]>
 </description>
-<pubDate>2018-02-08</pubDate>
+<pubDate>2018-06-04</pubDate>
 </item>
 <item>
 <title>461</title>
 <link>http://localhost:8000/461/</link>
 <description>
 <![CDATA[
-<p>
-{{ summary }}&nbsp;<a href="http://localhost:8000/461/">...</a>
-</p>
 <p><a href="http://localhost:8000/461/">Read More</a></p>
 ]]>
 </description>
-<pubDate>2018-02-08</pubDate>
+<pubDate>2018-06-04</pubDate>
 </item>
 <item>
 <title>11</title>
 <link>http://localhost:8000/11/</link>
 <description>
 <![CDATA[
-<p>
-{{ summary }}&nbsp;<a href="http://localhost:8000/11/">...</a>
-</p>
 <p><a href="http://localhost:8000/11/">Read More</a></p>
 ]]>
 </description>
-<pubDate>2018-02-08</pubDate>
+<pubDate>2018-06-04</pubDate>
 </item>
 <item>
 <title>7</title>
 <link>http://localhost:8000/7/</link>
 <description>
 <![CDATA[
-<p>
-{{ summary }}&nbsp;<a href="http://localhost:8000/7/">...</a>
-</p>
 <p><a href="http://localhost:8000/7/">Read More</a></p>
 ]]>
 </description>
-<pubDate>2018-02-08</pubDate>
+<pubDate>2018-06-04</pubDate>
 </item>
 <item>
 <title>1</title>
 <link>http://localhost:8000/1/</link>
 <description>
 <![CDATA[
-<p>
-{{ summary }}&nbsp;<a href="http://localhost:8000/1/">...</a>
-</p>
 <p><a href="http://localhost:8000/1/">Read More</a></p>
 ]]>
 </description>
-<pubDate>2018-02-08</pubDate>
+<pubDate>2018-06-04</pubDate>
 </item>
 <item>
 <title>10</title>
 <link>http://localhost:8000/10/</link>
 <description>
 <![CDATA[
-<p>
-{{ summary }}&nbsp;<a href="http://localhost:8000/10/">...</a>
-</p>
 <p><a href="http://localhost:8000/10/">Read More</a></p>
 ]]>
 </description>
-<pubDate>2018-02-08</pubDate>
+<pubDate>2018-06-04</pubDate>
 </item>
 <item>
 <title>13</title>
 <link>http://localhost:8000/13/</link>
 <description>
 <![CDATA[
-<p>
-{{ summary }}&nbsp;<a href="http://localhost:8000/13/">...</a>
-</p>
 <p><a href="http://localhost:8000/13/">Read More</a></p>
 ]]>
 </description>
-<pubDate>2018-02-08</pubDate>
+<pubDate>2018-06-04</pubDate>
 </item>
 <item>
 <title>2</title>
 <link>http://localhost:8000/2/</link>
 <description>
 <![CDATA[
-<p>
-{{ summary }}&nbsp;<a href="http://localhost:8000/2/">...</a>
-</p>
 <p><a href="http://localhost:8000/2/">Read More</a></p>
 ]]>
 </description>
-<pubDate>2018-02-08</pubDate>
+<pubDate>2018-06-04</pubDate>
 </item>
 <item>
 <title>16</title>
 <link>http://localhost:8000/16/</link>
 <description>
 <![CDATA[
-<p>
-{{ summary }}&nbsp;<a href="http://localhost:8000/16/">...</a>
-</p>
 <p><a href="http://localhost:8000/16/">Read More</a></p>
 ]]>
 </description>
-<pubDate>2018-02-08</pubDate>
+<pubDate>2018-06-04</pubDate>
 </item>
 <item>
 <title>12</title>
 <link>http://localhost:8000/12/</link>
 <description>
 <![CDATA[
-<p>
-{{ summary }}&nbsp;<a href="http://localhost:8000/12/">...</a>
-</p>
 <p><a href="http://localhost:8000/12/">Read More</a></p>
 ]]>
 </description>
-<pubDate>2018-02-08</pubDate>
+<pubDate>2018-06-04</pubDate>
 </item>
 <item>
 <title>15</title>
 <link>http://localhost:8000/15/</link>
 <description>
 <![CDATA[
-<p>
-{{ summary }}&nbsp;<a href="http://localhost:8000/15/">...</a>
-</p>
 <p><a href="http://localhost:8000/15/">Read More</a></p>
 ]]>
 </description>
-<pubDate>2018-02-08</pubDate>
+<pubDate>2018-06-04</pubDate>
 </item>
 <item>
 <title>4</title>
 <link>http://localhost:8000/4/</link>
 <description>
 <![CDATA[
-<p>
-{{ summary }}&nbsp;<a href="http://localhost:8000/4/">...</a>
-</p>
 <p><a href="http://localhost:8000/4/">Read More</a></p>
 ]]>
 </description>
-<pubDate>2018-02-08</pubDate>
+<pubDate>2018-06-04</pubDate>
 </item>
 <item>
 <title>3</title>
 <link>http://localhost:8000/3/</link>
 <description>
 <![CDATA[
-<p>
-{{ summary }}&nbsp;<a href="http://localhost:8000/3/">...</a>
-</p>
 <p><a href="http://localhost:8000/3/">Read More</a></p>
 ]]>
 </description>
-<pubDate>2018-02-08</pubDate>
+<pubDate>2018-06-04</pubDate>
 </item>
 <item>
 <title>8</title>
 <link>http://localhost:8000/8/</link>
 <description>
 <![CDATA[
-<p>
-{{ summary }}&nbsp;<a href="http://localhost:8000/8/">...</a>
-</p>
 <p><a href="http://localhost:8000/8/">Read More</a></p>
 ]]>
 </description>
-<pubDate>2018-02-08</pubDate>
+<pubDate>2018-06-04</pubDate>
 </item>
 <item>
 <title>6</title>
 <link>http://localhost:8000/6/</link>
 <description>
 <![CDATA[
-<p>
-{{ summary }}&nbsp;<a href="http://localhost:8000/6/">...</a>
-</p>
 <p><a href="http://localhost:8000/6/">Read More</a></p>
 ]]>
 </description>
-<pubDate>2018-02-08</pubDate>
+<pubDate>2018-06-04</pubDate>
 </item>
 <item>
 <title>14</title>
 <link>http://localhost:8000/14/</link>
 <description>
 <![CDATA[
-<p>
-{{ summary }}&nbsp;<a href="http://localhost:8000/14/">...</a>
-</p>
 <p><a href="http://localhost:8000/14/">Read More</a></p>
 ]]>
 </description>
-<pubDate>2018-02-08</pubDate>
+<pubDate>2018-06-04</pubDate>
 </item>
 <item>
 <title>17</title>
 <link>http://localhost:8000/17/</link>
 <description>
 <![CDATA[
-<p>
-{{ summary }}&nbsp;<a href="http://localhost:8000/17/">...</a>
-</p>
 <p><a href="http://localhost:8000/17/">Read More</a></p>
 ]]>
 </description>
-<pubDate>2018-02-08</pubDate>
+<pubDate>2018-06-04</pubDate>
 </item>
 <item>
 <title>9</title>
 <link>http://localhost:8000/9/</link>
 <description>
 <![CDATA[
-<p>
-{{ summary }}&nbsp;<a href="http://localhost:8000/9/">...</a>
-</p>
 <p><a href="http://localhost:8000/9/">Read More</a></p>
 ]]>
 </description>
-<pubDate>2018-02-08</pubDate>
+<pubDate>2018-06-04</pubDate>
 </item>
 <item>
 <title>5</title>
 <link>http://localhost:8000/5/</link>
 <description>
 <![CDATA[
-<p>
-{{ summary }}&nbsp;<a href="http://localhost:8000/5/">...</a>
-</p>
 <p><a href="http://localhost:8000/5/">Read More</a></p>
 ]]>
 </description>
-<pubDate>2018-02-08</pubDate>
+<pubDate>2018-06-04</pubDate>
 </item>
 <item>
 <title>Backup To Google Drive With Duplicity</title>
 <link>http://localhost:8000/backup-to-google-drive-with-duplicity/</link>
 <description>
 <![CDATA[
-<p>
-{{ summary }}&nbsp;<a href="http://localhost:8000/backup-to-google-drive-with-duplicity/">...</a>
-</p>
 <p><a href="http://localhost:8000/backup-to-google-drive-with-duplicity/">Read More</a></p>
 ]]>
 </description>
-<pubDate>2018-02-08</pubDate>
-</item>
-<item>
-<title>About Shobute</title>
-<link>http://localhost:8000/about-shobute/</link>
-<description>
-<![CDATA[
-<p>
-{{ summary }}&nbsp;<a href="http://localhost:8000/about-shobute/">...</a>
-</p>
-<p><a href="http://localhost:8000/about-shobute/">Read More</a></p>
-]]>
-</description>
-<pubDate>2018-02-08</pubDate>
+<pubDate>2018-06-04</pubDate>
 </item>
 <item>
 <title>Least Restrictive Go Ruleset</title>
 <link>http://localhost:8000/least-restrictive-go-ruleset/</link>
 <description>
 <![CDATA[
-<p>
-{{ summary }}&nbsp;<a href="http://localhost:8000/least-restrictive-go-ruleset/">...</a>
-</p>
 <p><a href="http://localhost:8000/least-restrictive-go-ruleset/">Read More</a></p>
 ]]>
 </description>
-<pubDate>2018-02-08</pubDate>
+<pubDate>2018-06-04</pubDate>
 </item>
 <item>
 <title>Update Files In Vim Without Changing Modification Date</title>
 <link>http://localhost:8000/update-files-in-vim-without-changing-modification-date/</link>
 <description>
 <![CDATA[
-<p>
-{{ summary }}&nbsp;<a href="http://localhost:8000/update-files-in-vim-without-changing-modification-date/">...</a>
-</p>
 <p><a href="http://localhost:8000/update-files-in-vim-without-changing-modification-date/">Read More</a></p>
 ]]>
 </description>
-<pubDate>2018-02-08</pubDate>
+<pubDate>2018-06-04</pubDate>
 </item>
 <item>
 <title>Favourite Quotations</title>
 <link>http://localhost:8000/favourite-quotations/</link>
 <description>
 <![CDATA[
-<p>
-{{ summary }}&nbsp;<a href="http://localhost:8000/favourite-quotations/">...</a>
-</p>
 <p><a href="http://localhost:8000/favourite-quotations/">Read More</a></p>
 ]]>
 </description>
-<pubDate>2018-02-08</pubDate>
+<pubDate>2018-06-04</pubDate>
 </item>
 <item>
 <title>How To Type Unicode On Linux</title>
 <link>http://localhost:8000/how-to-type-unicode-on-linux/</link>
 <description>
 <![CDATA[
-<p>
-{{ summary }}&nbsp;<a href="http://localhost:8000/how-to-type-unicode-on-linux/">...</a>
-</p>
 <p><a href="http://localhost:8000/how-to-type-unicode-on-linux/">Read More</a></p>
 ]]>
 </description>
-<pubDate>2018-02-08</pubDate>
-</item>
-<item>
-<title>Impossible List</title>
-<link>http://localhost:8000/impossible-list/</link>
-<description>
-<![CDATA[
-<p>
-{{ summary }}&nbsp;<a href="http://localhost:8000/impossible-list/">...</a>
-</p>
-<p><a href="http://localhost:8000/impossible-list/">Read More</a></p>
-]]>
-</description>
-<pubDate>2018-02-08</pubDate>
+<pubDate>2018-06-04</pubDate>
 </item>
 
 
