@@ -29,7 +29,6 @@
 
 
 from collections import defaultdict
-from datetime import datetime
 import glob
 import os
 import re
@@ -57,13 +56,13 @@ def read_content(path):
     text = fread(path)
     name = os.path.basename(path).split('.')[0]
     category = os.path.dirname(path).split('/')[-1]
-    date = datetime.fromtimestamp(os.path.getmtime(path))
+    full_date = os.popen(f'git log --pretty=format:%cI -1 -- "{path}"').read()
 
     return {
         'category': category,
         'content': text,
-        'date': date.strftime('%Y-%m-%d'),
-        'full_date': date.strftime('%Y-%m-%d %H:%M:%S'),
+        'date': full_date[:10],
+        'full_date': full_date,
         'slug': name,
         'title': name.replace('-', ' ').title(),
     }
@@ -130,7 +129,6 @@ def main():
         'base_path': '',
         'title': 'Shobute',
         'site_url': 'http://localhost:8000',
-        'current_year': datetime.now().year
     }
 
     # Load layouts.
